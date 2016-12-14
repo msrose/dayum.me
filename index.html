@@ -16,9 +16,9 @@
       (function() {
         var headerElement = document.getElementById('dayum');
         var messageElement = document.getElementById('message');
-        var count = /a=(\d+)/.exec(location.search);
+        var count = /a=(\d+)/.exec(location.hash);
         headerElement.innerText = (count ? dayum(parseInt(count[1], 10)) : dayum.daaaaaaaaaaaaaaaaayum()).toUpperCase();
-        var message = /m=(.+)/.exec(location.search);
+        var message = /m=(.+)/.exec(location.hash);
         if(message) {
           messageElement.innerText = decodeURIComponent(message[1]).split('_').join(' ');
         }
