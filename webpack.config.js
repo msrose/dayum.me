@@ -3,9 +3,10 @@
 const path = require('path');
 
 module.exports = {
+  context: path.resolve('./src'),
   entry: [
-    './src/styles.scss',
-    './src/app'
+    './styles.scss',
+    './app'
   ],
   output: {
     filename: 'bundle.js',
