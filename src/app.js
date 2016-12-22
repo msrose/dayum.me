@@ -8,7 +8,7 @@ const app = document.getElementById('app');
 
 const { count, message } = extractUrlData(location.search);
 
-const header = HeaderComponent();
+const header = HeaderComponent({ origin: location.origin });
 const main = MainComponent({ count, message });
 
 app.appendChild(header);
