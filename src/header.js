@@ -1,5 +1,3 @@
-/* globals Buffer */
-
 import './header.scss';
 
 import { computeLink } from './url-helpers';
