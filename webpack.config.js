@@ -4,10 +4,7 @@ const path = require('path');
 
 module.exports = {
   context: path.resolve('./src'),
-  entry: [
-    './styles.scss',
-    './app'
-  ],
+  entry: './app',
   output: {
     filename: 'bundle.js',
     path: path.resolve('./public/build'),
@@ -27,5 +24,6 @@ module.exports = {
   },
   devServer: {
     contentBase: './public'
-  }
+  },
+  devtool: 'source-map'
 };
