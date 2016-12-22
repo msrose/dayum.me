@@ -2,9 +2,7 @@
 
 import './header.scss';
 
-const computeLink = ({ origin, count, message }) => {
-  return `${origin}/?` + Buffer.from(`${count}:${message}`).toString('base64');
-};
+import { computeLink } from './url-helpers';
 
 const FormComponent = ({ origin }) => {
   const wrapper = document.createElement('div');
@@ -33,15 +31,14 @@ const FormComponent = ({ origin }) => {
 };
 
 const HeaderComponent = ({ origin }) => {
-  const info = document.createElement('div');
-  info.innerText = 'Two-syllable damn generator';
+
+  const link = document.createElement('a');
+  link.href = '#';
+  link.innerText = 'Generate your own two-syllable damn';
 
   const form = FormComponent({ origin });
   form.style.display = 'none';
 
-  const link = document.createElement('a');
-  link.href = '#';
-  link.innerText = 'Generate your own';
   let formOpen = false;
   link.addEventListener('click', (event) => {
     event.preventDefault();
@@ -51,7 +48,6 @@ const HeaderComponent = ({ origin }) => {
 
   const header = document.createElement('div');
   header.className = 'header';
-  header.appendChild(info);
   header.appendChild(link);
   header.appendChild(form);
   return header;
