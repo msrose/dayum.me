@@ -1,2 +1,2 @@
 # dayum.me
-http://dayum.me
+http://msrose.github.io/dayum.me
